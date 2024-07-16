@@ -89,11 +89,12 @@ function handleCardClick(event) {
     event.preventDefault();
     if (event.target.nodeName !== 'IMG') {
         return;
-    }
-    const { source, alt } = event.target.dataset;
+  }
+  const source = event.target.dataset.source;
+  const original = event.target.dataset.source;  
 
     const instance = basicLightbox.create(`<div class="modal">
-        <img src="${source}" alt="${alt}" width="360" height="200"/>
+        <img src="${source}" alt="${original}" />
     </div>`
     );
     instance.show();
